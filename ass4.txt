@@ -1,0 +1,108 @@
+Question 1,3,4-
+package employee;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int i;
+	Employee[] emp=new Employee[3];
+        for(i=0;i<3;i++) {
+            emp[i] = new Employee();
+            emp[i].getDetails();
+            emp[i].displayDetails();
+        }
+        Doctor[] doc=new Doctor[4];
+        for(i=0;i<4;i++) {
+            doc[i] = new Doctor();
+            doc[i].getDetails();
+            doc[i].displayDetails();
+            doc[i].treatPatient();
+            doc[i].doSurgery();
+        }
+        Engineer[] eng=new Engineer[3];
+        for(i=0;i<3;i++) {
+            eng[i] = new Engineer();
+            eng[i].getDetails();
+            eng[i].displayDetails();
+            eng[i].developTechnology();
+            eng[i].discoverNewApps();
+        }
+        Pilot[] pil=new Pilot[3];
+        for(i=0;i<3;i++) {
+            pil[i] = new Pilot();
+            pil[i].getDetails();
+            pil[i].displayDetails();
+            pil[i].controlActions();
+            pil[i].maintainAeroplane();
+
+        }
+    }
+}
+
+
+package employee;
+import java.util.Scanner;
+
+public class Employee {
+    public String name;
+    public int age;
+    public int salary;
+    public String designation;
+
+    public void getDetails() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter employee name,age,salary,designation");
+        name = sc.next();
+        age = sc.nextInt();
+        sc.nextLine();
+        salary = sc.nextInt();
+        designation = sc.next();
+    }
+    public void displayDetails(){
+        System.out.println("name: " + name);
+        System.out.println("age: " + age);
+        System.out.println("salary: " +salary);
+        System.out.println("designation: " +designation);
+
+    }
+}
+Question 2-
+
+package employee;
+
+public class Doctor extends Employee{
+    public void treatPatient(){
+        System.out.println("Treats patients");
+    }
+    public void doSurgery(){
+        System.out.println("Performs Surgeries");
+    }
+}
+
+package employee;
+
+public class Engineer extends Employee{
+    String batch,college,university;
+     public void developTechnology(){
+         System.out.println("Develops new technologies");
+     }
+    public void discoverNewApps(){
+         System.out.println("Discovers new apps");
+    }
+
+}
+
+
+package employee;
+
+public class Pilot extends Employee {
+    String airport,airplane;
+    public void controlActions(){
+        System.out.println("Controls actions of driving panel");
+    }
+    public void maintainAeroplane(){
+        System.out.println("Maintains aeroplane");
+    }
+}
+
+
